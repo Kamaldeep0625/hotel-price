@@ -1,3 +1,19 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">
+    </script>
+</head>
+
+<body onload="brython()">
+
+<script type="text/python">
+from browser import document
 # This is the tax rate for hotels in Rhode Island.
 tax = 1.13
 # This is the approximate incidentals rate per night.
@@ -76,3 +92,9 @@ print ("Total Incidentals to Be Refunded $", format(inch_total,".2f"))
 print ("\n\nTotal for Stay Plus Temporary Hold", format(total_plus_inch , ".2f"))
 #Allow prompt to stay open after calculations.
 input('Press ENTER to exit')
+</script>
+
+
+</body>
+
+</html>
