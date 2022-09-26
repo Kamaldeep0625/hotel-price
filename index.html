@@ -1,0 +1,78 @@
+# This is the tax rate for hotels in Rhode Island.
+tax = 1.13
+# This is the approximate incidentals rate per night.
+inch_rate = 20
+# Ask user for the rate for the first rate
+x = float(input('What is the first rate? '))
+# How many nights does this rate apply for?
+x_nights = int(input('How many nights? '))
+# Ask user for the rate for the second rate
+y = float(input('What is the second rate? '))
+# How many nights does this rate apply for?
+y_nights = int(input('How many nights? '))
+# Ask user for the rate for the third rate
+z = float(input('What is the third rate? '))
+# How many nights does this rate apply for?
+z_nights = int(input('How many nights? '))
+
+
+
+
+
+
+taxable_days=30
+
+
+
+# Calculations for totals of rate for entire stay plus tax.
+
+if x_nights >= taxable_days:
+    x_total = (x*tax*taxable_days)+(x*(x_nights-taxable_days))
+    taxable_days=taxable_days-x_nights
+else:
+    x_total = x*tax*x_nights
+    taxable_days=taxable_days-x_nights
+
+
+if taxable_days <= 0:    
+    y_total = y*y_nights
+else:
+    if y_nights >= taxable_days:
+        y_total = (y*tax*taxable_days)+(y*(y_nights-taxable_days))
+        taxable_days=taxable_days-y_nights
+    else:
+        y_total = y*tax*y_nights
+        taxable_days=taxable_days-y_nights    
+
+
+if taxable_days <= 0:    
+    z_total = z*z_nights
+else:
+    if z_nights >= taxable_days:
+        z_total = (z*tax*taxable_days)+(z*(z_nights-taxable_days))
+        taxable_days=taxable_days-z_nights
+    else:
+        z_total = z*tax*z_nights
+        taxable_days=taxable_days-z_nights    
+
+total_for_stay = x_total + y_total + z_total
+
+
+#Calculation for the total incidentals for the temporary hold on card.
+inch_total = (x_nights + y_nights + z_nights) * inch_rate
+total_plus_inch = inch_total + total_for_stay
+#Printing these results
+
+if taxable_days <= 0:
+    print("\nMaximum Taxable days exceeded")
+else:
+    print("\n{} Taxable days remaining".format(taxable_days))
+
+print ("\nTotal for first rate $", format(x_total,".2f"))
+print ("Total for second rate $", format(y_total,".2f"))
+print ("Total for third rate $", format(z_total,".2f"))
+print ("\nTOTAL COST OF STAY $", format(total_for_stay,".2f"))
+print ("Total Incidentals to Be Refunded $", format(inch_total,".2f"))
+print ("\n\nTotal for Stay Plus Temporary Hold", format(total_plus_inch , ".2f"))
+#Allow prompt to stay open after calculations.
+input('Press ENTER to exit')
