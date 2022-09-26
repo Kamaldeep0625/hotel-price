@@ -80,16 +80,16 @@ total_plus_inch = inch_total + total_for_stay
 #Printing these results
 
 if taxable_days <= 0:
-    print("\nMaximum Taxable days exceeded")
+    document <= ("\nMaximum Taxable days exceeded")
 else:
-    print("\n{} Taxable days remaining".format(taxable_days))
+    document <= ("\n{} Taxable days remaining".format(taxable_days))
 
-print ("\nTotal for first rate $", format(x_total,".2f"))
-print ("Total for second rate $", format(y_total,".2f"))
-print ("Total for third rate $", format(z_total,".2f"))
-print ("\nTOTAL COST OF STAY $", format(total_for_stay,".2f"))
-print ("Total Incidentals to Be Refunded $", format(inch_total,".2f"))
-print ("\n\nTotal for Stay Plus Temporary Hold", format(total_plus_inch , ".2f"))
+document <= ("\nTotal for first rate $", format(x_total,".2f"))
+document <= ("Total for second rate $", format(y_total,".2f"))
+document <= ("Total for third rate $", format(z_total,".2f"))
+document <= ("\nTOTAL COST OF STAY $", format(total_for_stay,".2f"))
+document <= ("Total Incidentals to Be Refunded $", format(inch_total,".2f"))
+document <= ("\n\nTotal for Stay Plus Temporary Hold", format(total_plus_inch , ".2f"))
 #Allow prompt to stay open after calculations.
 input('Press ENTER to exit')
 </script>
